@@ -9,20 +9,18 @@ def bubbleSort (inputList):
         for j in range (len_of_list-1):
             counter += 1
             if inputList[j] > inputList[j+1]:
-                temp = inputList[j]
-                inputList[j] = inputList[j+1]
-                inputList [j+1] = temp
+                inputList[j],inputList[j+1] = inputList[j+1],inputList[j]
                 swapped = True
-        print (len_of_list)
+        print (f"{len_of_list}\nCompared {counter} times")
         if not swapped:
             break
-    print(counter)
+    return inputList
 
 
 #optimized
 def optBubbleSort(inputList):
     len_of_list = len(inputList)
-    counter = 0
+    counter = 0 # not important that much 
     for i in range (len_of_list - 1):
         swapped = False
         #the inner loop can be optimized when observing 
@@ -32,14 +30,12 @@ def optBubbleSort(inputList):
         for j in range (len_of_list - i - 1):
             counter += 1
             if inputList[j] > inputList [j+1]:
-                temp = inputList[j]
-                inputList[j] = inputList[j+1]
-                inputList[j+1] = temp
+                inputList[j],inputList[j+1] = inputList[j+1],inputList[j]
                 swapped = True
         print (len_of_list)
         if not swapped:
             break
-    print(counter)
+    return inputList
 
 
 
