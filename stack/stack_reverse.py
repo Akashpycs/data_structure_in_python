@@ -31,14 +31,15 @@ def reverse_list(input_list):
 	recpt = []
 	for ele in input_list:
 		s.push(ele)
-		ele = None
+		
+	while len(s): # it will loop untill len of stack > 0
+		recpt.append(s.pop()) # it will append the top element of pop in list
+		
+	return recpt # list is reversed now
 
-	for ele in input_list:
-		print (ele)
-
-	for n in range (0, len(input_list)):
-		recpt.append(s.pop())
-	return recpt
+	# test 1
+	# input_list = ['hello','there','python']
+	# output = ['python','there','hello']
 
 #input_list = range (10), 
 # CANNOT USE ASSIGNMENT ON THE LIST CREATED BY RANGE
